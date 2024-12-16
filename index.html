@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PenguChan - Pudgy Penguin Forum</title>
+    <link rel="icon" type="image/x-icon" href="ava.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --bg-color: #1a1a1a;
+        --text-color: #e0e0e0;
+        --accent-color: #00c3ff;
+        --post-bg: #2a2a2a;
+        --terminal-bg: #000000;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Courier New", monospace;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+      }
+
+      .header {
+        background: linear-gradient(45deg, #001f3f, #000);
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 2px solid var(--accent-color);
+      }
+
+      .logo {
+        font-size: 2rem;
+        color: var(--accent-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .social-links {
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        color: var(--accent-color);
+        text-decoration: none;
+        margin: 0 1rem;
+        font-size: 1.2rem;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 1rem;
+        padding: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .forum-container {
+        background: var(--post-bg);
+        padding: 1rem;
+        border-radius: 5px;
+      }
+
+      .post {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 3px;
+      }
+
+      .post-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .post-number {
+        color: var(--accent-color);
+        margin-right: 0.5rem;
+      }
+
+      .post-content {
+        margin-left: 1rem;
+      }
+
+      .terminal {
+        background: var(--terminal-bg);
+        padding: 1rem;
+        border-radius: 5px;
+        height: 300px;
+        overflow-y: auto;
+      }
+
+      .terminal-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        color: var(--accent-color);
+      }
+
+      .terminal-content {
+        height: calc(100% - 60px);
+        overflow-y: auto;
+      }
+
+      .terminal-input {
+        display: flex;
+        margin-top: 0.5rem;
+      }
+
+      .terminal-input span {
+        color: var(--accent-color);
+        margin-right: 0.5rem;
+      }
+
+      .terminal-input input {
+        background: transparent;
+        border: none;
+        color: var(--text-color);
+        width: 100%;
+        outline: none;
+      }
+
+      .chatbot {
+        background: var(--post-bg);
+        padding: 1rem;
+        border-radius: 5px;
+        margin-top: 1rem;
+      }
+
+      .chat-messages {
+        height: 200px;
+        overflow-y: auto;
+        margin-bottom: 0.5rem;
+      }
+
+      .chat-input {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .chat-input input {
+        flex: 1;
+        padding: 0.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid var(--accent-color);
+        border-radius: 3px;
+        color: var(--text-color);
+      }
+
+      .chat-input button {
+        padding: 0.5rem 1rem;
+        background: var(--accent-color);
+        border: none;
+        border-radius: 3px;
+        color: var(--bg-color);
+        cursor: pointer;
+      }
+
+      .message {
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+        border-radius: 3px;
+      }
+
+      .bot-message {
+        background: rgba(0, 195, 255, 0.1);
+      }
+
+      .user-message {
+        background: rgba(255, 255, 255, 0.1);
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">PenguChan</div>
+      <div>Pudgy Penguin Community Forum</div>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-discord"></i></a>
+      </div>
+    </header>
+
+    <div class="container">
+      <main class="forum-container">
+        <div class="post">
+          <div class="post-header">
+            <span class="post-number">#1</span>
+            <span>Anonymous</span>
+          </div>
+          <div class="post-content">
+            Just got my first Pudgy Penguin! The community is amazing!
+          </div>
+        </div>
+        <div class="post">
+          <div class="post-header">
+            <span class="post-number">#2</span>
+            <span>Anonymous</span>
+          </div>
+          <div class="post-content">
+            >implying penguins aren't the future
+            <br />ngmi
+          </div>
+        </div>
+        <div class="post">
+          <div class="post-header">
+            <span class="post-number">#3</span>
+            <span>Anonymous</span>
+          </div>
+          <div class="post-content">
+            Does anyone know when the next drop is?
+          </div>
+        </div>
+      </main>
+
+      <aside>
+        <div class="terminal">
+          <div class="terminal-header">
+            <span>PenguOS v1.0</span>
+            <span>></span>
+          </div>
+          <div class="terminal-content" id="terminal-content">
+            > Welcome to PenguOS
+            <br />> Type 'help' for commands
+          </div>
+          <div class="terminal-input">
+            <span>></span>
+            <input
+              type="text"
+              id="terminal-input"
+              placeholder="Enter command..."
+            />
+          </div>
+        </div>
+
+        <div class="chatbot">
+          <h3 style="color: var(--accent-color); margin-bottom: 1rem">
+            PenguChan AI
+          </h3>
+          <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+              Hello! I'm PenguChan AI. How can I help you today?
+            </div>
+          </div>
+          <div class="chat-input">
+            <input type="text" placeholder="Ask PenguChan..." />
+            <button>Send</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script>
+      const terminalInput = document.getElementById("terminal-input");
+      const terminalContent = document.getElementById("terminal-content");
+
+      terminalInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          const command = this.value;
+          terminalContent.innerHTML += `<br>> ${command}`;
+
+          if (command.toLowerCase() === "help") {
+            terminalContent.innerHTML += `<br>Available commands:
+                        <br>help - Show this message
+                        <br>stats - Show Pudgy Penguins stats
+                        <br>clear - Clear terminal`;
+          } else if (command.toLowerCase() === "stats") {
+            terminalContent.innerHTML += `<br>Pudgy Penguins Stats:
+                        <br>Floor Price: 2.8 ETH
+                        <br>Total Volume: 89.5K ETH
+                        <br>Holders: 3,042`;
+          } else if (command.toLowerCase() === "clear") {
+            terminalContent.innerHTML =
+              "> Welcome to PenguOS\n> Type 'help' for commands";
+          }
+
+          this.value = "";
+          terminalContent.scrollTop = terminalContent.scrollHeight;
+        }
+      });
+
+      const chatInput = document.querySelector(".chat-input input");
+      const chatButton = document.querySelector(".chat-input button");
+      const chatMessages = document.getElementById("chat-messages");
+
+      function addMessage(message, isBot) {
+        const messageDiv = document.createElement("div");
+        messageDiv.className = `message ${
+          isBot ? "bot-message" : "user-message"
+        }`;
+        messageDiv.textContent = message;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      function handleChat() {
+        const message = chatInput.value;
+        if (message.trim() === "") return;
+
+        addMessage(message, false);
+        chatInput.value = "";
+
+        setTimeout(() => {
+          let response = "I'm still learning about Pudgy Penguins! 🐧";
+          if (message.toLowerCase().includes("price")) {
+            response = "The current floor price is 2.8 ETH!";
+          } else if (message.toLowerCase().includes("hello")) {
+            response = "Hello! Welcome to PenguChan! 🐧";
+          }
+          addMessage(response, true);
+        }, 1000);
+      }
+
+      chatButton.addEventListener("click", handleChat);
+      chatInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") handleChat();
+      });
+    </script>
+  </body>
+</html>
